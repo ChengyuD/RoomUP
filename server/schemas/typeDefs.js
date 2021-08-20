@@ -34,8 +34,8 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    addProfile(name: String!, phoneNumber: String!, email: String!, budget: Int, bookmark: Boolean, roomies: Boolean): Auth
-    updateUser(name: String!, phoneNumber: String!, email: String!, budget: Int, bookmark: Boolean, roomies: Boolean): Profile
+    addProfile(name: String!, phoneNumber: String!, email: String!, budget: Int!, bookmark: Boolean!, roomies: Boolean!): Auth
+    updateProfile(name: String!, phoneNumber: String!, email: String!, budget: Int!, bookmark: Boolean!, roomies: Boolean!): Profile
     login(email: String!, password: String!): Auth
   }
 
