@@ -1,40 +1,63 @@
-import { Link } from 'react-router-dom';
-import { useQuery } from '@apollo/client';
-import { QUERY_MATCHUPS } from '../utils/queries';
+import './App.css';
 import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+import Grid from '@material-ui/core/Grid';
+import Container from '@material-ui/core/Container';
 
-const Home = () => {
-  const { loading, data } = useQuery(QUERY_MATCHUPS, {
-    fetchPolicy: "no-cache"
-  });
 
+function App() {
   const handleButtonClick = () => {
     console.log("click")
   };
-
-  const matchupList = data?.matchups || [];
-
   return (
-    <div>
-      <container className="title">
-        <Col>
-        <h1>RoomUP</h1>
-        <h2>Find your next place</h2>
-        </Col>
-      </container>
+   <body>
 
-      <container>
-        <Row>
-          <Col className="search">
-          <input placeholder="insert text"></input>
-          <Button color="" variant="" onClick={ () => {handleButtonClick()}}>Search</Button>
-          </Col>
-        </Row>
-      </container>
-
+    <Container className="main" maxWidth="xl">
       
-    </div>
-  );
-};
+      <Grid className="hero"
+          container
+          direction="column"
+          justifyContent="center"
+          alignItems="center"
+      >
+        <h1>RoomUP</h1>
+        <p>Find your next place and roomate!</p>
+      </Grid>
+      <Container>
+        <Grid className="inner" container spacing={2}>
+          <Grid item md={3} xs={6}
+                className="search"
+                container
+                direction="row"
+                justifyContent="center"
+                alignItems="center">
+            <p>Where are you looking to live?</p>
+          </Grid>
 
-export default Home;
+          <Grid item md={7} xs={6}
+                className="search"
+                container
+                direction="row"
+                justifyContent="center"
+                alignItems="stretch">
+            <TextField variant="outlined" placeholder="Irvine, CA" className="search-bar"/>
+          </Grid>
+
+          <Grid item md={2} 
+                className="search"
+                container
+                direction="column"
+                justifyContent="center"
+                alignItems="center">
+            <Button variant="contained" color="primary">
+                Search
+            </Button> 
+          </Grid>
+        </Grid>
+      </Container>
+    </Container>
+  </body> 
+  );
+}
+
+export default App;
