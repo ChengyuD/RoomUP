@@ -5,7 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 
 
-function App() {
+function Home() {
   const handleButtonClick = () => {
     console.log("click")
   };
@@ -60,4 +60,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;
