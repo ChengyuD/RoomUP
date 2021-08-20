@@ -1,4 +1,4 @@
-# RoomUP
+# RoomUp
 
 ## Table Content
 - [User Story](#user-story)
