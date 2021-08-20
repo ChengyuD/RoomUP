@@ -1,6 +1,17 @@
 import { gql } from '@apollo/client';
 
-export const CREATE_MATCHUP = gql`
+export const LOGIN = gql`
+  mutation login($email: String!, $password: String!) {
+    login(email: $email, password: $password) {
+      token
+      user {
+        _id
+      }
+    }
+  }
+`;
+
+export const CREATE_PROFILE = gql`
   mutation createMatchup($tech1: String!, $tech2: String!) {
     createMatchup(tech1: $tech1, tech2: $tech2) {
       _id

@@ -38,6 +38,11 @@ const typeDefs = gql`
     updateUser(name: String!, phoneNumber: String!, email: String!, budget: Int, bookmark: Boolean, roomies: Boolean): Profile
     login(email: String!, password: String!): Auth
   }
+
+  type Auth {
+    profile: Profile
+    token: ID!
+  }
 `;
 
 module.exports = typeDefs;
