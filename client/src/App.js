@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import Home from './pages/Home';
-import SearchResult from './SearchResult';
+import SearchResult from './src/pages/SearchResult.js';
 import Profile from './pages/Profile';
 import NotFound from './pages/NotFound';
 
