@@ -1,6 +1,7 @@
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
+  scalar Date
   type Listings {
     _id: ID
     address: String
@@ -10,14 +11,14 @@ const typeDefs = gql`
     type: String
     amenities: String
     available: Date
-    contact: {
-      name: String
-      email: String
-    }
+    contact: [Contact]
     bookmark: Boolean
     roomies: Boolean
   }
-
+  type Contact {
+    name: String
+    email: String
+  }
   type Profile {
     _id: ID
     name: String
@@ -27,18 +28,16 @@ const typeDefs = gql`
     bookmark: Boolean
     roomies: Boolean
   }
-
   type Query {
     listings: [Listings]
+    listing(id: ID): [Listings]
     profile: Profile
   }
-
   type Mutation {
-    addProfile(name: String!, phoneNumber: String!, email: String!, budget: Int!, bookmark: Boolean!, roomies: Boolean!): Auth
-    updateProfile(name: String!, phoneNumber: String!, email: String!, budget: Int!, bookmark: Boolean!, roomies: Boolean!): Profile
+    addProfile(name: String!, phoneNumber: String!, email: String!, budget: Int, bookmark: Boolean, roomies: Boolean): Auth
+    updateUser(name: String!, phoneNumber: String!, email: String!, budget: Int, bookmark: Boolean, roomies: Boolean): Profile
     login(email: String!, password: String!): Auth
   }
-
   type Auth {
     profile: Profile
     token: ID!
