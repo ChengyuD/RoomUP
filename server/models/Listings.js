@@ -32,7 +32,7 @@ const listingsSchema = new Schema({
         required: true,
         unique: false,
     },
-    avilable: {
+    available: {
         type: Date,
         required: true,
         unique: false,
@@ -51,8 +51,14 @@ const listingsSchema = new Schema({
         },
     },
     ],
-    bookmark,
-    roomies,
+    bookmark: {
+        type: Boolean,
+        required: true
+    },
+    roomies: {
+        type: Boolean,
+        required: true
+    },
 });
 
 const Listings = model('Listings', listingsSchema);
