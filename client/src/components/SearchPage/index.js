@@ -5,7 +5,7 @@ import { QUERY_TECH } from '../../utils/queries';
 import { CREATE_MATCHUP } from '../../utils/mutations';
 import Button from '@material-ui/core/Button';
 import './SearchResults.css';
-import SearchIcon from "material-ui/icons/Search";
+import SearchIcon from "@material-ui/icons/Search";
 import SearchResult from "../SearchResults";
 
 function SearchPage() {
