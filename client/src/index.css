@@ -13,14 +13,6 @@ body {
   height: 100vh;
 }
 
-.grid {
-  background-color: red;
-}
-
-.box {
-  background-color: red;
-}
-
 .inner {
   background-color: white;
   border-radius: 6px;
