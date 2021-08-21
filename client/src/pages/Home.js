@@ -14,6 +14,10 @@ function Home() {
   };
 
   const [searchValue, setSearchValue] = useState('');
+  const handleChange = (event) => {
+    setSearchValue(event.target.value);
+    console.log(event.target.value);
+  };
 
   const [type, setType] = React.useState('');
 
