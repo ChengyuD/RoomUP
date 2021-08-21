@@ -6,22 +6,16 @@ import Container from '@material-ui/core/Container';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem'
 import { useState } from 'react'
+import Navigation from '../components/Navigation'
 
 
 function Home() {
-  const handleButtonClick = () => {
-    console.log("click")
-  };
 
-  // const [searchValue, setSearchValue] = useState('');
-  // const handleChange = (event) => {
-  //   setSearchValue(event.target.value);
-  //   console.log(event.target.value);
-  // };
-
+  const [searchValue, setSearchValue] = React.useState('');
   const [type, setType] = React.useState('');
 
   const handleChange = (event) => {
+    setSearchValue(event.target.value);
     setType(event.target.value);
     console.log(event.target.value);
   };
@@ -29,7 +23,8 @@ function Home() {
 
   return (
    <body>
-
+    <Navigation />
+    
     <Container className="main" maxWidth="xl">
       
       <Grid className="hero"
@@ -52,15 +47,19 @@ function Home() {
             <h4>Where are you looking to live?</h4>
           </Grid>
 
+
+          {/* Input field for location */}
           <Grid item md={4} xs={6}
                 className="search"
                 container
                 direction="row"
                 justifyContent="center"
-                alignItems="stretch">
-            <TextField variant="filled" placeholder="Irvine, CA" className="search-bar"/>
+                alignItems="stretch"
+                >
+            <TextField value={searchValue} onChange={(e) => setSearchValue(e.target.value)} variant="filled" placeholder="Irvine, CA" className="search-bar" id="searchtext" />
           </Grid>
 
+          {/* Dropdown for housing type */}
           <Grid item md={1} xs={6}
                 className="search"
                 container
@@ -78,13 +77,14 @@ function Home() {
                 </Select>
           </Grid>
 
+          {/* Search Button */}
           <Grid item md={2} 
                 className="search"
                 container
                 direction="column"
                 justifyContent="center"
                 alignItems="center">
-            <Button variant="contained" color="primary" onClick={() => console.log("click")}>
+            <Button to="/searchPage" variant="contained" color="primary" onClick={handleChange}>
                 Search
             </Button> 
           </Grid>
