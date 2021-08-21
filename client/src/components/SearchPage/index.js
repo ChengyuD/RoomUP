@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useMutation, useQuery } from '@apollo/client';
-import { QUERY_TECH } from '../utils/queries';
-import { CREATE_MATCHUP } from '../utils/mutations';
-export const 
+import { QUERY_TECH } from '../../utils/queries';
+import { CREATE_MATCHUP } from '../../utils/mutations';
 import Button from '@material-ui/core/Button';
 import './SearchResults.css';
 import SearchIcon from "material-ui/icons/Search";
-import SearchResult from "./SearchResult";
+import SearchResult from "../SearchResults";
 
 function SearchPage() {
   return (

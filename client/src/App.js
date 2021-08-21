@@ -2,9 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import Home from './pages/Home';
-import SearchResult from './src/pages/SearchResult.js';
+import SearchPage from './components/SearchPage';
 import Profile from './pages/Profile';
-import NotFound from './pages/NotFound';
 
 const client = new ApolloClient({
   uri: '/graphql',
@@ -20,11 +19,11 @@ function App() {
             <Route exact path="/">
               <Home />
             </Route>
-            <Route exact path="/searchresult">
-              <SearchResult />
+            <Route exact path="/SearchPage">
+              <SearchPage />
             </Route>
-            <Route exact path="/searchresult/:id">
-              <Vote />
+            <Route exact path="/SearchPage/:id">
+              
             </Route>
           </Switch>
         </div>
