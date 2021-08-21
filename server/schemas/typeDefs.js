@@ -33,6 +33,7 @@ const typeDefs = gql`
     listings: [Listings]
     listing(id: ID): [Listings]
     profile: Profile
+    seedData(secret: String!): Boolean
   }
   type Mutation {
     addProfile(name: String!, phoneNumber: String!, email: String!, budget: Int, bookmark: Boolean, roomies: Boolean): Auth
