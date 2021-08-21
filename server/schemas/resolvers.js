@@ -1,6 +1,7 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { Listings, Profile } = require('../models');
 const { signToken } = require('../utils/auth');
+const {seeder} = require("../seeds/graphqlSeed");
 
 const { GraphQLScalarType } = require('graphql');
 
@@ -13,6 +14,8 @@ const dateScalar = new GraphQLScalarType({
     return value.toISOString();
   },
 })
+
+console.log(process.env.SEED_SECRET)
 
 const resolvers = {
   Query: {
@@ -29,6 +32,10 @@ const resolvers = {
     listing: async (_, { id }) => {
       return Listings.findById(id);
     },
+    seedData: async (_, {secret}) =>{
+      console.log('secret ', secret)
+     return  secret !== process.env.SEED_SECRET ?  null : seeder()
+    }
   },
   Mutation: {
     addProfile: async (_, args) => {
