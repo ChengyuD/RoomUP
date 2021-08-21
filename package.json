@@ -1,5 +1,5 @@
 {
-  "name": "tech-matchup-app",
+  "name": "roomup-app",
   "version": "1.0.0",
   "description": "",
   "main": "server/server.js",
@@ -16,6 +16,7 @@
     "concurrently": "^5.3.0"
   },
   "dependencies": {
+    "@material-ui/icons": "^4.11.2",
     "graphql": "^15.5.1"
   }
 }
