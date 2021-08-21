@@ -5,7 +5,7 @@ function Navigation() {
   return (
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
-        <Link class="navbar-brand navbar-dark" to="/">DaRe</Link>
+        <Link class="navbar-brand navbar-dark" to="/">RoomUP</Link>
         <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
