@@ -2,6 +2,10 @@ const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
   scalar Date
+  type Contact {
+    name: String
+    email: String
+  }
   type Listings {
     _id: ID
     address: String
@@ -15,10 +19,7 @@ const typeDefs = gql`
     bookmark: Boolean
     roomies: Boolean
   }
-  type Contact {
-    name: String
-    email: String
-  }
+
   type Profile {
     _id: ID
     name: String
