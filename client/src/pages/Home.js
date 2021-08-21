@@ -1,3 +1,4 @@
+import React from 'react';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
@@ -13,6 +14,13 @@ function Home() {
   };
 
   const [searchValue, setSearchValue] = useState('');
+
+  const [type, setType] = React.useState('');
+
+  const handleChange = (event) => {
+    setType(event.target.value);
+    console.log(event.target.value);
+  };
 
 
   return (
@@ -57,9 +65,8 @@ function Home() {
                 alignItems="stretch">
             <Select
                   labelId="demo-simple-select-label"
-                  id="demo-simple-select"
-                  value="Type of housing"
-                  onChange={() => console.log("something")}
+                  value={type}
+                  onChange={handleChange}
                 >
                   <MenuItem value={"apartment"}>Apartment</MenuItem>
                   <MenuItem value={"condo"}>Condo</MenuItem>
