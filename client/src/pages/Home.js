@@ -13,11 +13,11 @@ function Home() {
     console.log("click")
   };
 
-  const [searchValue, setSearchValue] = useState('');
-  const handleChange = (event) => {
-    setSearchValue(event.target.value);
-    console.log(event.target.value);
-  };
+  // const [searchValue, setSearchValue] = useState('');
+  // const handleChange = (event) => {
+  //   setSearchValue(event.target.value);
+  //   console.log(event.target.value);
+  // };
 
   const [type, setType] = React.useState('');
 
@@ -49,7 +49,7 @@ function Home() {
                 direction="row"
                 justifyContent="center"
                 alignItems="center">
-            <p>Where are you looking to live?</p>
+            <h4>Where are you looking to live?</h4>
           </Grid>
 
           <Grid item md={4} xs={6}
