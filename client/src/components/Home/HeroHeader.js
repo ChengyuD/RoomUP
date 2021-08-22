@@ -1,5 +1,6 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
+import './heroHeader.css';
 
 function HeroHeader(props) {
     return (

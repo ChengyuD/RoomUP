@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   navBar: {
-    backgroundColor: "brown"
+    backgroundColor: "darkGrey"
   }
 }));
 

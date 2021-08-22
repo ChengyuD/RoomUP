@@ -26,8 +26,9 @@ const useStyles = makeStyles(() => ({
     margin: 0,
     minWidth: 120,
   },
-  Button: {
+  button: {
     borderRadius: "20px",
+    minWidth: 150,
   },
   divider: {
     display: "",
@@ -81,7 +82,8 @@ const useStyles = makeStyles(() => ({
             <FormGroup className={classes.formControl}>
             <Select
             value={type}
-            onChange={handleChange}>
+            onChange={handleChange}
+            textArea="test">
             <MenuItem value={"apartment"}>Apartment</MenuItem>
             <MenuItem value={"condo"}>Condo</MenuItem>
             <MenuItem value={"house"}>House</MenuItem>
@@ -97,7 +99,7 @@ const useStyles = makeStyles(() => ({
           direction="row"
           justifyContent="center"
           alignItems="center">
-            <Button to="/searchPage" variant="contained" color="secondary">
+            <Button className={classes.button} to="/searchPage" variant="contained" color="secondary">
                 Search
             </Button>
           </Grid>
