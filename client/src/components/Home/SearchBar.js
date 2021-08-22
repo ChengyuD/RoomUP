@@ -97,7 +97,7 @@ const useStyles = makeStyles(() => ({
             <FormGroup className={classes.formControl}>
             <Select
             value={type}
-            onChange={handleChange}
+            // onChange={handleChange}
             textArea="test">
             <MenuItem value={"apartment"}>Apartment</MenuItem>
             <MenuItem value={"condo"}>Condo</MenuItem>
