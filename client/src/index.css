@@ -5,11 +5,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: lightblue;
+  background-color: rgb(230, 201, 173);
 }
 
 .main {
-  background-color: lightblue;
   height: 100vh;
 }
 
