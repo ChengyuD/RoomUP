@@ -46,13 +46,19 @@ const useStyles = makeStyles(() => ({
 
   export default function SearchBar() {
     const classes = useStyles();
-    const [searchValue, setSearchValue] = React.useState('');
     const [type, setType] = React.useState('');
       const handleChange = (event) => {
-      setSearchValue(event.target.value);
+      setSearchValue(searchValue);
       setType(event.target.value);
       console.log(event.target.value);
     };
+
+    const [searchValue, setSearchValue] = React.useState('');
+    const handleClick = (event) => {
+      event.preventDefault();
+      console.log(searchValue);
+      console.log(type)
+    }
   
     return (
       <Container className={classes.wrapper} spacing={0}>
@@ -110,7 +116,7 @@ const useStyles = makeStyles(() => ({
           direction="row"
           justifyContent="center"
           alignItems="center">
-            <Button className={classes.button} to="/searchPage" variant="contained" color="secondary">
+            <Button className={classes.button} to="/searchPage" variant="contained" color="secondary" onClick={handleClick}>
                 Search
             </Button>
           </Grid>
