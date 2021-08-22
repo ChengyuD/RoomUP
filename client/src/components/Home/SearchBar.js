@@ -10,6 +10,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Divider from '@material-ui/core/Divider';
 import FormGroup from '@material-ui/core/FormGroup';
 import Hidden from '@material-ui/core/Hidden'
+import { Link } from 'react-router-dom'
 
 const useStyles = makeStyles(() => ({
   wrapper: {
@@ -41,6 +42,10 @@ const useStyles = makeStyles(() => ({
     display: "",
       
   },
+  link: {
+    color: "white",
+    textDecoration: "none"
+  }
 }));
 
 
@@ -97,8 +102,7 @@ const useStyles = makeStyles(() => ({
             <FormGroup className={classes.formControl}>
             <Select
             value={type}
-            // onChange={handleChange}
-            textArea="test">
+            onChange={handleChange}>
             <MenuItem value={"apartment"}>Apartment</MenuItem>
             <MenuItem value={"condo"}>Condo</MenuItem>
             <MenuItem value={"house"}>House</MenuItem>
@@ -117,7 +121,7 @@ const useStyles = makeStyles(() => ({
           justifyContent="center"
           alignItems="center">
             <Button className={classes.button} to="/searchPage" variant="contained" color="secondary" onClick={handleClick}>
-                Search
+                <Link className={classes.link} to="/searchPage">Search</Link>
             </Button>
           </Grid>
 
