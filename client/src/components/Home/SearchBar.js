@@ -6,81 +6,103 @@ import Container from '@material-ui/core/Container';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import { useState } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Divider from '@material-ui/core/Divider';
+import FormGroup from '@material-ui/core/FormGroup';
 
-function SearchBar() {
+const useStyles = makeStyles(() => ({
+  wrapper: {
+    backgroundColor: "white",
+    borderRadius: "35px",
+    boxShadow: "2px 2px 6px 0px"
+  },
+  description: {
+    
+  },
+  type: {
 
+  },
+  formControl: {
+    margin: 0,
+    minWidth: 120,
+  },
+  Button: {
+    borderRadius: "20px",
+  },
+  divider: {
+    display: "",
+      
+  },
+}));
+
+
+  export default function SearchBar() {
+    const classes = useStyles();
     const [searchValue, setSearchValue] = React.useState('');
     const [type, setType] = React.useState('');
-  
-    const handleChange = (event) => {
+      const handleChange = (event) => {
       setSearchValue(event.target.value);
       setType(event.target.value);
       console.log(event.target.value);
     };
   
-  
     return (
-     <body>
-  
-      <Container className="main" maxWidth="xl">
-  
-        <Container>
-          <Grid className="inner" container spacing={2}>
-            <Grid item md={3} xs={6}
-                  className="search"
-                  container
-                  direction="row"
-                  justifyContent="center"
-                  alignItems="center">
-              <h4>Where are you looking to live?</h4>
-            </Grid>
-  
-  
-            {/* Input field for location */}
-            <Grid item md={4} xs={6}
-                  className="search"
-                  container
-                  direction="row"
-                  justifyContent="center"
-                  alignItems="stretch"
-                  >
-              <TextField value={searchValue} onChange={(e) => setSearchValue(e.target.value)} variant="filled" placeholder="Irvine, CA" className="search-bar" id="searchtext" />
-            </Grid>
-  
-            {/* Dropdown for housing type */}
-            <Grid item md={1} xs={6}
-                  className="search"
-                  container
-                  direction="row"
-                  justifyContent="center"
-                  alignItems="stretch">
-              <Select
-                    labelId="demo-simple-select-label"
-                    value={type}
-                    onChange={handleChange}
-                  >
-                    <MenuItem value={"apartment"}>Apartment1111</MenuItem>
-                    <MenuItem value={"condo"}>Condo</MenuItem>
-                    <MenuItem value={"house"}>House</MenuItem>
-                  </Select>
-            </Grid>
-  
-            {/* Search Button */}
-            <Grid item md={2} 
-                  className="search"
-                  container
-                  direction="column"
-                  justifyContent="center"
-                  alignItems="center">
-              <Button to="/searchPage" variant="contained" color="primary" onClick={handleChange}>
-                  Search
-              </Button> 
-            </Grid>
+      <Container className={classes.wrapper} spacing={0}>
+        <Grid spacing={2}container>
+          
+          <Grid item md={3} sm={3} xs={12}
+          className={classes.description}
+          container
+          direction="row"
+          justifyContent="center"
+          alignItems="center">
+            <h3>Where are you looking to live?</h3>
           </Grid>
-        </Container>
+
+          <Grid><Divider orientation="vertical" className={classes.divider}/></Grid>
+
+          <Grid item md={3} sm={2} xs={6}
+          className={classes.description}
+          container
+          direction="row"
+          justifyContent="center"
+          alignItems="center">
+            <TextField value={searchValue} onChange={(e) => setSearchValue(e.target.value)} variant="standard" placeholder="Irvine, CA" className="search-bar" id="searchtext" />
+          </Grid>
+
+          <Grid><Divider orientation="vertical" /></Grid>
+
+          <Grid item md={3} sm={3} xs={5}
+          className={classes.type}
+          container
+          direction="row"
+          justifyContent="center"
+          alignItems="center">
+            <FormGroup className={classes.formControl}>
+            <Select
+            value={type}
+            onChange={handleChange}>
+            <MenuItem value={"apartment"}>Apartment</MenuItem>
+            <MenuItem value={"condo"}>Condo</MenuItem>
+            <MenuItem value={"house"}>House</MenuItem>
+            </Select>
+          </FormGroup>
+          </Grid>
+
+          <Grid><Divider orientation="vertical" className={classes.divider}/></Grid>
+
+          <Grid item md={2} sm={3}
+          className={classes.button}
+          container
+          direction="row"
+          justifyContent="center"
+          alignItems="center">
+            <Button to="/searchPage" variant="contained" color="secondary">
+                Search
+            </Button>
+          </Grid>
+
+        </Grid>
       </Container>
-    </body> 
     );
   }
-  
-  export default SearchBar;

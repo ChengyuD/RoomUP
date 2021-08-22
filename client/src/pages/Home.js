@@ -7,7 +7,7 @@ import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import { useState } from 'react';
 import Navigation from '../components/Navigation';
-import { HeroHeader, SearchBar } from '../components/Home';
+import { HeroHeader, SearchBar, SearchBarRefactor } from '../components/Home';
 
 
 function Home() {
@@ -23,7 +23,6 @@ function Home() {
       />
 
       <SearchBar />
-
       
     </Container>
   </body> 
