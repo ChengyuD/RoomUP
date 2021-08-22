@@ -9,6 +9,7 @@ import { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Divider from '@material-ui/core/Divider';
 import FormGroup from '@material-ui/core/FormGroup';
+import Hidden from '@material-ui/core/Hidden'
 
 const useStyles = makeStyles(() => ({
   wrapper: {
@@ -25,6 +26,12 @@ const useStyles = makeStyles(() => ({
   formControl: {
     margin: 0,
     minWidth: 120,
+  },
+  buttonOutside: {
+    display: "block",
+    margin: "auto",
+    textAlign: "center"
+
   },
   button: {
     borderRadius: "20px",
@@ -60,7 +67,9 @@ const useStyles = makeStyles(() => ({
             <h3>Where are you looking to live?</h3>
           </Grid>
 
-          <Grid><Divider orientation="vertical" className={classes.divider}/></Grid>
+          <Hidden xsDown>
+          <Grid><Divider orientation="vertical" /></Grid>
+          </Hidden>
 
           <Grid item md={3} sm={2} xs={6}
           className={classes.description}
@@ -91,10 +100,12 @@ const useStyles = makeStyles(() => ({
           </FormGroup>
           </Grid>
 
-          <Grid><Divider orientation="vertical" className={classes.divider}/></Grid>
+          <Hidden xsDown>
+          <Grid><Divider orientation="vertical" /></Grid>
+          </Hidden>
 
-          <Grid item md={2} sm={3}
-          className={classes.button}
+          <Grid item md={2} sm={3} xs={12}
+          className={classes.buttonOutside}
           container
           direction="row"
           justifyContent="center"
