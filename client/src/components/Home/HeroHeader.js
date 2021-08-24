@@ -4,7 +4,7 @@ import './heroHeader.css';
 
 function HeroHeader(props) {
     return (
-        <Grid className="hero"
+        <Grid className="hero" xs={12}
             container
             direction="column"
             justifyContent="center"

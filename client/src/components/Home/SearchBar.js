@@ -11,6 +11,7 @@ import Divider from '@material-ui/core/Divider';
 import FormGroup from '@material-ui/core/FormGroup';
 import Hidden from '@material-ui/core/Hidden'
 import { Link } from 'react-router-dom'
+import InputLabel from '@material-ui/core/InputLabel'
 
 const useStyles = makeStyles(() => ({
   wrapper: {
@@ -100,13 +101,17 @@ const useStyles = makeStyles(() => ({
           justifyContent="center"
           alignItems="center">
             <FormGroup className={classes.formControl}>
-            <Select
-            value={type}
-            onChange={handleChange}>
-            <MenuItem value={"apartment"}>Apartment</MenuItem>
-            <MenuItem value={"condo"}>Condo</MenuItem>
-            <MenuItem value={"house"}>House</MenuItem>
-            </Select>
+              <Select
+              displayEmpty
+              value={type}
+              onChange={handleChange}>
+              <MenuItem selected disabled value="">
+                Type of housing
+              </MenuItem>
+              <MenuItem value={"apartment"}>Apartment</MenuItem>
+              <MenuItem value={"condo"}>Condo</MenuItem>
+              <MenuItem value={"house"}>House</MenuItem>
+              </Select>
           </FormGroup>
           </Grid>
 
