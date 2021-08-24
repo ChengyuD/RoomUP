@@ -1,10 +1,5 @@
 import React from 'react';
-import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
-import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
-import Select from '@material-ui/core/Select';
-import MenuItem from '@material-ui/core/MenuItem';
 import { useState } from 'react';
 import { HeroHeader, SearchBar, SearchBarRefactor } from '../components/Home';
 import { makeStyles } from '@material-ui/core/styles';
