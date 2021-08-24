@@ -4,6 +4,7 @@ import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import Home from './pages/Home';
 import SearchPage from './components/SearchPage';
 import Profile from './pages/Profile';
+import Navigation from './components/Navigation';
 
 const client = new ApolloClient({
   uri: '/graphql',
@@ -13,6 +14,7 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
+      <Navigation />
       <Router>
         <div className="flex-column justify-center align-center min-100-vh bg-primary">
           <Switch>

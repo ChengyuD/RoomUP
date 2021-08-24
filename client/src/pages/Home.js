@@ -6,7 +6,6 @@ import Container from '@material-ui/core/Container';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import { useState } from 'react';
-import Navigation from '../components/Navigation';
 import { HeroHeader, SearchBar, SearchBarRefactor } from '../components/Home';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -38,7 +37,6 @@ const useStyles = makeStyles(() => ({
 function Home() {
   return (
    <body>
-    <Navigation />
 
     <Container className="main" maxWidth="xl">
 
