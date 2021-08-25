@@ -5,21 +5,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: lightblue;
+  background-color: rgb(173, 198, 230);
 }
 
-.main {
-  background-color: lightblue;
-  height: 100vh;
-}
 
-.grid {
-  background-color: red;
-}
-
-.box {
-  background-color: red;
-}
 
 .inner {
   background-color: white;
