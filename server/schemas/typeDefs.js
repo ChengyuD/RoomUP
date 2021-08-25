@@ -25,24 +25,28 @@ const typeDefs = gql`
     name: String
     phoneNumber: String
     email: String
+    password: String
     budget: Int
     bookmark: Boolean
     roomies: Boolean
   }
+
+  type Auth {
+    token: ID!
+    profile: Profile
+  }
+
   type Query {
     listings: [Listings]
     listing(id: ID): [Listings]
     profile: Profile
+    profiles: [Profile]!
     seedData(secret: String!): Boolean
   }
   type Mutation {
-    addProfile(name: String!, phoneNumber: String!, email: String!, budget: Int, bookmark: Boolean, roomies: Boolean): Auth
+    addProfile(name: String!, email: String!, password: String!): Auth
     updateUser(name: String!, phoneNumber: String!, email: String!, budget: Int, bookmark: Boolean, roomies: Boolean): Profile
     login(email: String!, password: String!): Auth
-  }
-  type Auth {
-    profile: Profile
-    token: ID!
   }
 `;
 
