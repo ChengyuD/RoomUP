@@ -125,7 +125,7 @@ const useStyles = makeStyles(() => ({
           direction="row"
           justifyContent="center"
           alignItems="center">
-            <Button className={classes.button} to="/searchPage" variant="contained" color="secondary" onClick={handleClick}>
+            <Button className={classes.button} variant="contained" color="secondary" onClick={handleClick}>
                 <Link className={classes.link} to="/searchPage">Search</Link>
             </Button>
           </Grid>
