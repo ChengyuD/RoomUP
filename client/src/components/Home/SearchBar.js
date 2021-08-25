@@ -33,7 +33,7 @@ const useStyles = makeStyles(() => ({
     display: "block",
     margin: "auto",
     textAlign: "center"
-
+    
   },
   button: {
     borderRadius: "20px",

@@ -27,6 +27,9 @@ const useStyles = makeStyles((theme) => ({
   },
   navBar: {
     backgroundColor: "darkGrey"
+  },
+  loginButton: {
+    color: "white"
   }
 }));
 
@@ -64,7 +67,9 @@ export default function Navigation() {
           <Typography variant="h6" className={classes.title}>
             RoomUP
           </Typography>
-          <Button color="inherit">Login</Button>
+          <Button color="inherit">
+            <Link to="/profile" className={classes.loginButton}>Login</Link>
+          </Button>
         </Toolbar>
       </AppBar>
     </div>
