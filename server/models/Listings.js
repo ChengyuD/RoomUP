@@ -1,63 +1,56 @@
 const { Schema, model } = require('mongoose');
 
 const listingsSchema = new Schema({
+    city: {
+        type: String,
+        required: true,
+        unique: false,
+        trim: true,
+    },
     address: {
         type: String,
         required: true,
-        unique: true,
         trim: true,
-    },
-    price: {
-        type: Number,
-        required: true,
-        min: 0.99,
-    },
-    bedroom: {
-        type: Number,
-        required: true,
-        unique: false,
-    },
-    bathroom: {
-        type: Number,
-        required: true,
-        unique: false,
     },
     type: {
         type: String,
         required: true,
-        unique: false,
+        trim: true,
     },
-    amenities: {
+    description: {
         type: String,
         required: true,
-        unique: false,
+        trim: true,
     },
-    available: {
-        type: Date,
+    pets: {
+        type: String,
         required: true,
-        unique: false,
+        trim: true,
+    },
+    price: {
+        type: String,
+        required: true,
+        trim: true,
     },
     contact: [
     {
         name: {
             type: String,
             required: true,
+            trim: true,
         },
         email: {
             type: String,
             required: true,
-            unique: true,
+            trim: true,
             match: [/.+@.+\..+/, 'Must match an email address!'],
         },
     },
     ],
-    bookmark: {
-        type: Boolean,
-        required: true
-    },
     roomies: {
         type: Boolean,
-        required: true
+        required: true,
+        trim: true,
     },
 });
 

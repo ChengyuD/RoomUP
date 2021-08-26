@@ -2,21 +2,19 @@ import { gql } from '@apollo/client';
 
 export const QUERY_LISTINGS = gql`
 {
-    listings {
-      address
-      price
-      dedroom
-      bathroom
-      type
-      amenities
-      available
-      contact {  
-        name
-        email
-      }
-      bookmark
-      roomies
+  listings {
+    city
+    address
+    type
+    description
+    pets
+    price
+    contact {  
+      name
+      email
     }
+    roomies
+  }
   }
 `;
 
@@ -27,7 +25,6 @@ export const QUERY_PROFILE = gql`
       phoneNumber
       email
       budget
-      bookmark
       roomies
     }
   }
