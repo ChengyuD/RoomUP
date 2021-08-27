@@ -117,7 +117,7 @@ export default function Navigation() {
                   <Link to="/login" className={classes.loginButton}>Login</Link>
                 </Button>
                 <Button color="inherit">
-                  <Link to="/profile" className={classes.loginButton}>Profile</Link>
+                  <Link to="/Signup" className={classes.loginButton}>Sign up</Link>
                 </Button>
               </>
             )}
