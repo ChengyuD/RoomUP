@@ -1,6 +1,5 @@
 import React from 'react';
 import Container from '@material-ui/core/Container';
-import { useState } from 'react';
 import { HeroHeader, SearchBar } from '../components/Home';
 import { makeStyles } from '@material-ui/core/styles';
 
