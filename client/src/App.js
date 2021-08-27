@@ -4,6 +4,8 @@ import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import Home from './pages/Home';
 import SearchPage from './components/SearchPage';
 import Profile from './pages/Profile';
+import Signup from './pages/Signup';
+import Login from './pages/Login';
 import Navigation from './components/Navigation';
 
 const client = new ApolloClient({
@@ -21,6 +23,12 @@ function App() {
           <Switch>
             <Route exact path="/">
               <Home />
+            </Route>
+            <Route exact path="/login">
+              <Login />
+            </Route>
+            <Route exact path="/signup">
+              <Signup />
             </Route>
             <Route exact path="/SearchPage">
               <SearchPage />
