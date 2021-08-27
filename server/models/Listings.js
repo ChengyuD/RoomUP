@@ -1,4 +1,6 @@
-const { Schema, model } = require('mongoose');
+const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
+const { Schema } = mongoose;
 
 const listingsSchema = new Schema({
     city: {
@@ -23,14 +25,14 @@ const listingsSchema = new Schema({
         trim: true,
     },
     pets: {
-        type: String,
+        type: Boolean,
         required: true,
         trim: true,
     },
     price: {
         type: String,
         required: true,
-        trim: true,
+        default: 0,
     },
     contact: [
     {
@@ -48,13 +50,12 @@ const listingsSchema = new Schema({
     },
     ],
     roomies: {
-        type: Boolean,
-        required: true,
-        trim: true,
+        type: Schema.Types.ObjectId,
+        ref: 'Listings',
     },
 });
 
-const Listings = model('Listings', listingsSchema);
+const Listings = mongoose.model('Listings', listingsSchema);
 
 module.exports = Listings;
 

@@ -11,10 +11,10 @@ const typeDefs = gql`
     address: String
     type: String
     description: String
-    pets: String
-    price: Int
+    pets: Boolean
+    price: String
     contact: [Contact]
-    roomies: Boolean
+    roomies: String
   }
 
   type Profile {
@@ -22,7 +22,7 @@ const typeDefs = gql`
     phoneNumber: String
     email: String
     budget: Int
-    roomies: Boolean
+    roomies: String
   }
 
   type Query {
