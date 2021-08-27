@@ -3,6 +3,7 @@ import { gql } from '@apollo/client';
 export const QUERY_LISTINGS = gql`
 {
   listings {
+    img
     city
     address
     type

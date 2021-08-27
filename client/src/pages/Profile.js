@@ -1,5 +1,5 @@
 import React from 'react';
-import './Card.css'
+import './profile.css'
 
 <<<<<<< HEAD
 function Home() {
