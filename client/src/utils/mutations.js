@@ -25,7 +25,7 @@ export const CREATE_PROFILE = gql`
 `;
 
 export const CREATE_Listings = gql`
-  mutation createListings($city: String!, $address: String!, $description: String!, $pets: Int!, $price: Int!, $contact: String!, $roomies: Boolean!) {
+  mutation createListings($city: String!, $address: String!, $description: String!, $pets: Boolean!, $price: Srting!, $contact: String!, $roomies: String!) {
     createListings(city: $city, address: $address, description: $description, pets: $pets, price: $price, contact: $contact, roomies: $roomies) {
       city
       address
