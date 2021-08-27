@@ -1,17 +1,6 @@
 import React from 'react';
 import './profile.css'
 
-<<<<<<< HEAD
-function Home() {
-    return (
-     <div>
-         <h1>Yo</h1>
-     </div>
-    );
-  }
-  
-  export default Home;
-=======
 function Card({ src, title, description, price }) {
     return (
         <div className='card'>
@@ -26,4 +15,3 @@ function Card({ src, title, description, price }) {
 }
 
 export default Card
->>>>>>> dev
