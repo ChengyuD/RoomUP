@@ -7,6 +7,7 @@ const typeDefs = gql`
     email: String
   }
   type Listings {
+    img: String
     city: String
     address: String
     type: String
@@ -14,7 +15,7 @@ const typeDefs = gql`
     pets: Boolean
     price: String
     contact: [Contact]
-    roomies: String
+    roomies: [Profile]
   }
 
   type Profile {
