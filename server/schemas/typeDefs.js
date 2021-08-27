@@ -7,34 +7,31 @@ const typeDefs = gql`
     email: String
   }
   type Listings {
-    _id: ID
+    city: String
     address: String
-    price: Int
-    bedroom: Int
-    bathroom: Int
     type: String
-    amenities: String
-    available: Date
+    description: String
+    pets: Boolean
+    price: String
     contact: [Contact]
-    bookmark: Boolean
-    roomies: Boolean
+    roomies: String
   }
 
   type Profile {
-    _id: ID
     name: String
     phoneNumber: String
     email: String
     budget: Int
-    bookmark: Boolean
-    roomies: Boolean
+    roomies: String
   }
+
   type Query {
     listings: [Listings]
     listing(id: ID): [Listings]
     profile: Profile
     seedData(secret: String!): Boolean
   }
+
   type Mutation {
     addProfile(name: String!, phoneNumber: String!, email: String!, budget: Int, bookmark: Boolean, roomies: Boolean): Auth
     updateUser(name: String!, phoneNumber: String!, email: String!, budget: Int, bookmark: Boolean, roomies: Boolean): Profile
