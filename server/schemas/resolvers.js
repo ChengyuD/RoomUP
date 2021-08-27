@@ -19,6 +19,9 @@ console.log(process.env.SEED_SECRET)
 
 const resolvers = {
   Query: {
+    profiles: async () => {
+      return Profile.find();
+    },
     profile: async (_, args, context) => {
       if (context.profile) {
         return Profile.findById(context.profile.id);

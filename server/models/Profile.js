@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+const bcrypt = require('bcrypt');
 const { Schema } = mongoose;
 
 const profileSchema = new Schema({
@@ -8,9 +8,12 @@ const profileSchema = new Schema({
         required: true,
         trim: true,
     },
-    phoneNumber: {
+    password: {
         type: String,
         required: true,
+    },
+    phoneNumber: {
+        type: String,
         trim: true,
     },
     email: {
@@ -33,6 +36,22 @@ const profileSchema = new Schema({
         }
     ]
 });
+
+// set up pre-save middleware to create password
+profileSchema.pre('save', async function (next) {
+    if (this.isNew || this.isModified('password')) {
+        const saltRounds = 10;
+        console.log('pw: ', this.password);
+        this.password = await bcrypt.hash(this.password, saltRounds);
+    }
+
+    next();
+});
+  
+// compare the incoming password with the hashed password
+profileSchema.methods.isCorrectPassword = async function (password) {
+    return bcrypt.compare(password, this.password);
+};
 
 const Profile = mongoose.model('Profile', profileSchema);
 
