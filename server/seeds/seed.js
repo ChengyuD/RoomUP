@@ -9,7 +9,7 @@ module.exports.seeder = async () => {
         await Listings.deleteMany({});
         const listings = await Listings.insertMany(listingsData);
         console.log("data seeded --- ", listings)
-        console.log('Technologies seeded!');
+        console.log('Search results seeded!');
     } catch (err) {
         console.log("error while seeding! --- ", err);
         return null
