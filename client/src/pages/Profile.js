@@ -1,8 +1,7 @@
-import { useQuery, useMutation } from '@apollo/client';
-import { useParams, Link } from 'react-router-dom';
-import { CREATE_VOTE } from '../utils/mutations';
-import { QUERY_MATCHUPS } from '../utils/queries';
+import React from 'react';
+import './Card.css'
 
+<<<<<<< HEAD
 function Home() {
     return (
      <div>
@@ -12,3 +11,19 @@ function Home() {
   }
   
   export default Home;
+=======
+function Card({ src, title, description, price }) {
+    return (
+        <div className='card'>
+            <img src={src} alt="" />
+            <div className="card__info">
+                <h2>{title}</h2>
+                <h4>{description}</h4>
+                <h3>{price}</h3>
+            </div>
+        </div>
+    )
+}
+
+export default Card
+>>>>>>> dev
