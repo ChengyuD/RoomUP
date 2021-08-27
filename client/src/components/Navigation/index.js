@@ -13,6 +13,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import { Link } from 'react-router-dom'
 import Button from '@material-ui/core/Button'
+import Auth from '../../utils/auth'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -27,6 +28,10 @@ const useStyles = makeStyles((theme) => ({
   },
   navBar: {
     backgroundColor: "darkGrey"
+  },
+  loginButton: {
+    color: "white",
+    textDecoration: "none"
   }
 }));
 
@@ -48,6 +53,11 @@ export default function Navigation() {
     setAnchorEl(null);
   };
 
+  const logout = (event) => {
+    event.preventDefault();
+    Auth.logout();
+  };
+
   return (
     <div className={classes.root}>
       {/* <FormGroup>
@@ -58,13 +68,89 @@ export default function Navigation() {
       </FormGroup> */}
       <AppBar position="static" className={classes.navBar}>
         <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <MenuIcon />
-          </IconButton>
+          <div>
+            <IconButton
+                start= "edge"
+                aria-label="account of current user"
+                aria-controls="menu-appbar"
+                aria-haspopup="true"
+                onClick={handleMenu}
+                color="inherit"
+              >
+                <MenuIcon />
+            </IconButton>
+            <Menu
+                id="menu-appbar"
+                anchorEl={anchorEl}
+                anchorOrigin={{
+                  vertical: 'top',
+                  horizontal: 'right',
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: 'top',
+                  horizontal: 'right',
+                }}
+                open={open}
+                onClose={handleClose}
+                >
+                <MenuItem onClick={handleClose}>Profile</MenuItem>
+                <MenuItem onClick={handleClose}>My account</MenuItem>
+            </Menu>
+          </div>
           <Typography variant="h6" className={classes.title}>
-            RoomUP
+            <Link to="/" className={classes.loginButton}>RoomUP</Link>
           </Typography>
-          <Button color="inherit">Login</Button>
+          <div>
+            {Auth.loggedIn() ? (
+              <>
+                <Button color="inherit">
+                      <Link className={classes.loginButton} onClick={logout}>Logout</Link>
+                    </Button>
+                    <Button color="inherit">
+                      <Link to="/profile" className={classes.loginButton}>Profile</Link>
+                    </Button>
+              </>
+            ) : (
+              <>
+                <Button color="inherit">
+                  <Link to="/login" className={classes.loginButton}>Login</Link>
+                </Button>
+                <Button color="inherit">
+                  <Link to="/Signup" className={classes.loginButton}>Sign up</Link>
+                </Button>
+              </>
+            )}
+          </div>
+          {/* <div>
+              <IconButton
+                aria-label="account of current user"
+                aria-controls="menu-appbar"
+                aria-haspopup="true"
+                onClick={handleMenu}
+                color="inherit"
+              >
+                <AccountCircle />
+              </IconButton>
+              <Menu
+                id="menu-appbar"
+                anchorEl={anchorEl}
+                anchorOrigin={{
+                  vertical: 'top',
+                  horizontal: 'right',
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: 'top',
+                  horizontal: 'right',
+                }}
+                open={open}
+                onClose={handleClose}
+              >
+                <MenuItem onClick={handleClose}>Profile</MenuItem>
+                <MenuItem onClick={handleClose}>My account</MenuItem>
+              </Menu>
+            </div> */}
         </Toolbar>
       </AppBar>
     </div>
