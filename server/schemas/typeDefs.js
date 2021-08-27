@@ -18,6 +18,7 @@ const typeDefs = gql`
   }
 
   type Profile {
+    _id: ID
     name: String
     phoneNumber: String
     email: String
