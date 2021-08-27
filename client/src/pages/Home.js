@@ -1,5 +1,6 @@
 import React from 'react';
 import Container from '@material-ui/core/Container';
+import { useState } from 'react';
 import { HeroHeader, SearchBar } from '../components/Home';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -18,7 +19,10 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-function Home() {
+
+
+function Home({getCity}) {
+  
   return (
    <body>
 
@@ -29,7 +33,7 @@ function Home() {
       subHeader={"Find your next place and roomate!"}
       />
 
-      <SearchBar />
+      <SearchBar getCity = {getCity} />
       
     </Container>
   </body> 
