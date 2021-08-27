@@ -3,6 +3,11 @@ const bcrypt = require('bcrypt');
 const { Schema } = mongoose;
 
 const listingsSchema = new Schema({
+    img: {
+        type: String,
+        required: true,
+        trim: true,
+    },
     city: {
         type: String,
         required: true,
@@ -51,7 +56,7 @@ const listingsSchema = new Schema({
     ],
     roomies: {
         type: Schema.Types.ObjectId,
-        ref: 'Listings',
+        ref: 'Profile',
     },
 });
 
