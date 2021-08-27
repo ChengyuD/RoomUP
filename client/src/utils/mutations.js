@@ -25,15 +25,31 @@ export const ADD_PROFILE = gql`
 `;
 
 export const CREATE_PROFILE = gql`
-  mutation createProfile($name: String!, $phoneNumber: String!, $email: String!, $budget: Int!, $bookmark: Boolean!, $roomies: Boolean!) {
-    createProfile(name: $name, phoneNumber: $phoneNumber, email: $email, budget: $budget, bookmark: $bookmark, roomies: $roomies) {
+  mutation createProfile($name: String!, $phoneNumber: String!, $email: String!, $budget: Int!, $roomies: Boolean!) {
+    createProfile(name: $name, phoneNumber: $phoneNumber, email: $email, budget: $budget, roomies: $roomies) {
       name
       phoneNumber
       email
       budget
-      bookmark
       roomies
     }
   }
 `;
 
+export const CREATE_Listings = gql`
+  mutation createListings($city: String!, $address: String!, $description: String!, $pets: Int!, $price: Int!, $contact: String!, $roomies: Boolean!) {
+    createListings(city: $city, address: $address, description: $description, pets: $pets, price: $price, contact: $contact, roomies: $roomies) {
+      city
+      address
+      type
+      description
+      pets
+      price
+      contact {  
+        name
+        email
+      }
+      roomies
+    }
+  }
+`;
