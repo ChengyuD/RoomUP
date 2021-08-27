@@ -13,6 +13,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import { Link } from 'react-router-dom'
 import Button from '@material-ui/core/Button'
+import Auth from '../../utils/auth'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -50,6 +51,11 @@ export default function Navigation() {
 
   const handleClose = () => {
     setAnchorEl(null);
+  };
+
+  const logout = (event) => {
+    event.preventDefault();
+    Auth.logout();
   };
 
   return (
@@ -95,10 +101,28 @@ export default function Navigation() {
           <Typography variant="h6" className={classes.title}>
             <Link to="/" className={classes.loginButton}>RoomUP</Link>
           </Typography>
-          <Button color="inherit">
-            <Link to="/profile" className={classes.loginButton}>Login</Link>
-          </Button>
           <div>
+            {Auth.loggedIn() ? (
+              <>
+                <Button color="inherit">
+                      <Link className={classes.loginButton} onClick={logout}>Logout</Link>
+                    </Button>
+                    <Button color="inherit">
+                      <Link to="/profile" className={classes.loginButton}>Profile</Link>
+                    </Button>
+              </>
+            ) : (
+              <>
+                <Button color="inherit">
+                  <Link to="/login" className={classes.loginButton}>Login</Link>
+                </Button>
+                <Button color="inherit">
+                  <Link to="/profile" className={classes.loginButton}>Profile</Link>
+                </Button>
+              </>
+            )}
+          </div>
+          {/* <div>
               <IconButton
                 aria-label="account of current user"
                 aria-controls="menu-appbar"
@@ -126,7 +150,7 @@ export default function Navigation() {
                 <MenuItem onClick={handleClose}>Profile</MenuItem>
                 <MenuItem onClick={handleClose}>My account</MenuItem>
               </Menu>
-            </div>
+            </div> */}
         </Toolbar>
       </AppBar>
     </div>
