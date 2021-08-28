@@ -14,8 +14,8 @@
 ## User Story
 ```md
 As a renter
-I WANT to search for places to rent and look for roommates
-SO THAT I can
+I WANT to find real estate listings in my area
+SO THAT I can easily connect with others looking for a roommate.
 ``` 
 
 
@@ -24,7 +24,7 @@ https://stark-falls-42695.herokuapp.com/
 
 
 ## Screentshot
-
+![image](https://user-images.githubusercontent.com/80147201/131225472-4888056d-2f7f-41f7-b678-c92551dc1bdc.png)
 
 
 ## Installation
