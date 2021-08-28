@@ -13,7 +13,7 @@
                 "email": "test@test.com"
             }
         ],
-        "roomies":["612847dd50733326a4c8a1f8"]
+        "roomies":[{"_id": "6125c4526c970d3bd8ac7d40"}, {"_id": "6125c4fa6c970d3bd8ac7d43"}]
     },
     {
         "img": "https://photos.zillowstatic.com/fp/70b8d1600f4faf5d81db5f5cc7344b2a-cc_ft_768.webp",
@@ -29,7 +29,7 @@
                 "email": "test1@test.com"
             }
         ],
-        "roomies":["612847dd50733326a4c8a1f8"]
+        "roomies":[{"_id": "6125c4526c970d3bd8ac7d40"}]
     },
     {
         "img": "https://photos.zillowstatic.com/fp/340b9088d19ce40f438715eb84a01e16-cc_ft_768.jpg",
@@ -45,7 +45,7 @@
                 "email": "test2@test.com"
             }
         ],
-        "roomies":["612847dd50733326a4c8a1f8"]
+        "roomies":[{"_id": "6125c4526c970d3bd8ac7d40"}]
     },
     {
         "img": "https://photos.zillowstatic.com/fp/ebc2e34eb99d90ada8c0cb16d5b89d84-cc_ft_768.jpg",
@@ -61,7 +61,7 @@
                 "email": "test3@test.com"
             }
         ],
-        "roomies":["612847dd50733326a4c8a1f8"]
+        "roomies":[{"_id": "6125c4526c970d3bd8ac7d40"}]
     },
     {
         "img": "https://photos.zillowstatic.com/fp/d78cca7c29d180bf5546921b126a540e-cc_ft_768.jpg",
@@ -77,7 +77,7 @@
                 "email": "test4@test.com"
             }
         ],
-        "roomies":["612847dd50733326a4c8a1f8"]
+        "roomies":[{"_id": "6125c4526c970d3bd8ac7d40"}]
     },
     {
         "img": "https://photos.zillowstatic.com/fp/5034ad007b6e2e128c44bf04db269382-cc_ft_768.jpg",
@@ -93,7 +93,7 @@
                 "email": "test5@test.com"
             }
         ],
-        "roomies":["612847dd50733326a4c8a1f8"]
+        "roomies":[{"_id": "6125c4526c970d3bd8ac7d40"}]
     },
     {
         "img": "https://photos.zillowstatic.com/fp/15944df77fc75098809a0cb82c858e87-cc_ft_768.jpg",
@@ -109,6 +109,6 @@
                 "email": "test6@test.com"
             }
         ],
-        "roomies":["612847dd50733326a4c8a1f8"]
+        "roomies":[{"_id": "6125c4526c970d3bd8ac7d40"}]
     }
 ]

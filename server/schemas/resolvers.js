@@ -30,7 +30,7 @@ const resolvers = {
       throw new AuthenticationError('Not logged in');
     },
     listings: async () => {
-      return Listings.find();
+      return Listings.find().populate('roomies').exec();
     },
     listing: async (_, { id }) => {
       return Listings.findById(id);

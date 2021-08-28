@@ -25,7 +25,7 @@ const typeDefs = gql`
     email: String
     password: String
     budget: Int
-    roomies: String
+    roomies: [Profile]
   }
 
   type Auth {

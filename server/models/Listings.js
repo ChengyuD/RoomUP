@@ -54,10 +54,10 @@ const listingsSchema = new Schema({
         },
     },
     ],
-    roomies: {
+    roomies: [{
         type: Schema.Types.ObjectId,
         ref: 'Profile',
-    },
+    }],
 });
 
 const Listings = mongoose.model('Listings', listingsSchema);
