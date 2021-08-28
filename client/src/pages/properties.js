@@ -35,7 +35,7 @@ function ListingInfo(props) {
       <img
         className="w-32 sm:w-48 sm:w-64 lg:w-64 lg:h-64 shadow-sm lg:px-1 lg:object-center lg:object-cover"
         key={index}
-        src={`https://roomie-profile-pictures.s3.amazonaws.com/${props.pictures[index]}`}
+        src={`/${props.pictures[index]}`}
         alt="Listing"
       />
     ));
