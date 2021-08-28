@@ -27,14 +27,16 @@ function App() {
             <Route exact path="/login">
               <Login />
             </Route>
+            <Route exact path="/profile">
+              <Profile />
+            </Route>
             <Route exact path="/signup">
               <Signup />
             </Route>
             <Route exact path="/SearchPage">
               <SearchPage />
             </Route>
-            <Route exact path="/SearchPage/:id">
-              
+            <Route exact path="/SearchPage/:id"> 
             </Route>
             <Route exact path="/properties.js">
               

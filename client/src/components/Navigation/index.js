@@ -54,22 +54,17 @@ export default function Navigation() {
   };
 
   const logout = (event) => {
+    console.log(Auth.getProfile())
     event.preventDefault();
     Auth.logout();
   };
 
   return (
     <div className={classes.root}>
-      {/* <FormGroup>
-        <FormControlLabel
-          control={<Switch checked={auth} onChange={handleChange} aria-label="login switch" />}
-          label={auth ? 'Logout' : 'Login'}
-        />
-      </FormGroup> */}
       <AppBar position="static" className={classes.navBar}>
         <Toolbar>
           <div>
-            <IconButton
+            {/* <IconButton
                 start= "edge"
                 aria-label="account of current user"
                 aria-controls="menu-appbar"
@@ -78,7 +73,7 @@ export default function Navigation() {
                 color="inherit"
               >
                 <MenuIcon />
-            </IconButton>
+            </IconButton> */}
             <Menu
                 id="menu-appbar"
                 anchorEl={anchorEl}
@@ -122,35 +117,6 @@ export default function Navigation() {
               </>
             )}
           </div>
-          {/* <div>
-              <IconButton
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleMenu}
-                color="inherit"
-              >
-                <AccountCircle />
-              </IconButton>
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorEl}
-                anchorOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
-                open={open}
-                onClose={handleClose}
-              >
-                <MenuItem onClick={handleClose}>Profile</MenuItem>
-                <MenuItem onClick={handleClose}>My account</MenuItem>
-              </Menu>
-            </div> */}
         </Toolbar>
       </AppBar>
     </div>
