@@ -3,12 +3,17 @@ const { Listings, Profile } = require('../models');
 
 const listingsData = require('./search.json');
 
-db.once('open', async () => {
-  await Listings.deleteMany({});
-
-  const technologies = await Listings.insertMany(techData);
-
-  console.log('Technologies seeded!');
-  process.exit(0);
-});
+module.exports.seeder = async () => {
+    console.log("doing the seed!");
+    try {
+        await Listings.deleteMany({});
+        const listings = await Listings.insertMany(listingsData);
+        console.log("data seeded --- ", listings)
+        console.log('Search results seeded!');
+    } catch (err) {
+        console.log("error while seeding! --- ", err);
+        return null
+    }
+    return true
+}
 

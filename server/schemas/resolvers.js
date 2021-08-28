@@ -19,6 +19,9 @@ console.log(process.env.SEED_SECRET)
 
 const resolvers = {
   Query: {
+    profiles: async () => {
+      return Profile.find();
+    },
     profile: async (_, args, context) => {
       if (context.profile) {
         return Profile.findById(context.profile.id);
@@ -45,7 +48,7 @@ const resolvers = {
       return { token, profile };
     },
     login: async (parent, { email, password }) => {
-      const user = await User.findOne({ email });
+      const user = await Profile.findOne({ email });
 
       if (!user) {
         throw new AuthenticationError('Incorrect credentials');

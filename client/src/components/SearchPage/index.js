@@ -8,7 +8,7 @@ import './SearchResults.css';
 import SearchIcon from "@material-ui/icons/Search";
 import SearchResult from "../SearchResults";
 
-function SearchPage() {
+function SearchPage({city, type}) {
   return (
       <div className='searchPage'>
           <div className='searchPage__info'>
@@ -21,7 +21,7 @@ function SearchPage() {
               <Button variant="outlined">More filters</Button>
           </div>
           <SearchResult
-              img=""
+              img="https://photos.zillowstatic.com/fp/3dae93b23ee891d7b2cfe49564c17e12-cc_ft_768.jpg"
               location="Irvine"
               title="27 Silver Cres, Irvine, CA 92603"
               description="4 bedroom · 2 bbthrooms · 2,175 sqft · Kitchen · Central AC"
@@ -31,7 +31,7 @@ function SearchPage() {
           />
 
           <SearchResult
-              img=""
+              img="https://photos.zillowstatic.com/fp/70b8d1600f4faf5d81db5f5cc7344b2a-cc_ft_768.webp"
               location="Irvine"
               title="130 Nature Walk, Irvine, CA 92618"
               description="3 bedroom · 3 bthrooms · Heating: Forced Air"
@@ -41,7 +41,7 @@ function SearchPage() {
           />
 
           <SearchResult
-              img=""
+              img="https://photos.zillowstatic.com/fp/340b9088d19ce40f438715eb84a01e16-cc_ft_768.jpg"
               location="Irvine"
               title="50 Eastshore St, Irvine, CA 92604"
               description="2 bedroom · 2 bathrooms · Free parking · Washing Machine"
@@ -50,7 +50,7 @@ function SearchPage() {
               total="$2,856 total"
           />
           <SearchResult
-              img=""
+              img="https://photos.zillowstatic.com/fp/ebc2e34eb99d90ada8c0cb16d5b89d84-cc_ft_768.jpg"
               location="Irvine"
               title="1 San Leon, Irvine, CA 92606"
               description="1 bedroom · 1.5 shared bthrooms · Wifi · Kitchen · Free parking · Washing Machine"
@@ -59,7 +59,7 @@ function SearchPage() {
               total="$2,300 total"
           />
           <SearchResult
-              img=""
+              img="https://photos.zillowstatic.com/fp/d78cca7c29d180bf5546921b126a540e-cc_ft_768.jpg"
               location="Irvine"
               title="20 Pergola, Irvine, CA 92612"
               description="3 bedroom · 2 shared bthrooms · Central AC · Outdoor: Playground, trail"
@@ -68,7 +68,7 @@ function SearchPage() {
               total="$2,409 total"
           />
           <SearchResult
-              img=""
+              img="https://photos.zillowstatic.com/fp/5034ad007b6e2e128c44bf04db269382-cc_ft_768.jpg"
               location="Irvine"
               title="1300 Hayes, Irvine, CA 92620"
               description="1 bedroom · 1.5 shared bthrooms · Building: 604 units · Cooling: Central · Laundry: Shared laundry · Outdoor: Playground, trail"
@@ -77,9 +77,9 @@ function SearchPage() {
               total="$2300 total"
           />
           <SearchResult
-              img=""
+              img="https://photos.zillowstatic.com/fp/15944df77fc75098809a0cb82c858e87-cc_ft_768.jpg"
               location="Irvine"
-              title="5 Star Luxury Apartment"
+              title="100 Grand Canal, Irvine, CA 92620"
               description="3 bedroom · 2 bthrooms · Building: 604 units · Cooling: Central · Laundry: Shared laundry · Outdoor: Playground, trail"
               pets= 'true'
               price="$2,200 /month"

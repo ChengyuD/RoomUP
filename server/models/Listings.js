@@ -1,67 +1,66 @@
-const { Schema, model } = require('mongoose');
+const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
+const { Schema } = mongoose;
 
 const listingsSchema = new Schema({
+    img: {
+        type: String,
+        required: true,
+        trim: true,
+    },
+    city: {
+        type: String,
+        required: true,
+        unique: false,
+        trim: true,
+    },
     address: {
         type: String,
         required: true,
-        unique: true,
         trim: true,
-    },
-    price: {
-        type: Number,
-        required: true,
-        min: 0.99,
-    },
-    bedroom: {
-        type: Number,
-        required: true,
-        unique: false,
-    },
-    bathroom: {
-        type: Number,
-        required: true,
-        unique: false,
     },
     type: {
         type: String,
         required: true,
-        unique: false,
+        trim: true,
     },
-    amenities: {
+    description: {
         type: String,
         required: true,
-        unique: false,
+        trim: true,
     },
-    available: {
-        type: Date,
+    pets: {
+        type: Boolean,
         required: true,
-        unique: false,
+        trim: true,
+    },
+    price: {
+        type: String,
+        required: true,
+        default: 0,
     },
     contact: [
     {
         name: {
             type: String,
             required: true,
+            trim: true,
         },
         email: {
             type: String,
             required: true,
-            unique: true,
+            trim: true,
             match: [/.+@.+\..+/, 'Must match an email address!'],
         },
     },
     ],
-    bookmark: {
-        type: Boolean,
-        required: true
-    },
     roomies: {
-        type: Boolean,
-        required: true
+        type: Schema.Types.ObjectId,
+        ref: 'Profile',
     },
 });
 
-const Listings = model('Listings', listingsSchema);
+const Listings = mongoose.model('Listings', listingsSchema);
 
 module.exports = Listings;
 
