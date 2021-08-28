@@ -20,13 +20,11 @@ export const QUERY_LISTINGS = gql`
 `;
 
 export const QUERY_PROFILE = gql`
-  {
-    profile {
+   query singleProfile {
+    profile(id: "61284e701628134e2e508484") {
+      _id
       name
-      phoneNumber
       email
-      budget
-      roomies
     }
   }
 `;

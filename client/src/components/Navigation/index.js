@@ -54,6 +54,7 @@ export default function Navigation() {
   };
 
   const logout = (event) => {
+    console.log(Auth.getProfile())
     event.preventDefault();
     Auth.logout();
   };

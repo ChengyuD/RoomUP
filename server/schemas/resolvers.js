@@ -22,12 +22,10 @@ const resolvers = {
     profiles: async () => {
       return Profile.find();
     },
-    profile: async (_, args, context) => {
-      if (context.profile) {
-        return Profile.findById(context.profile.id);
-      }
+    profile: async (_, { id }) => {
 
-      throw new AuthenticationError('Not logged in');
+        return Profile.findById(id);
+
     },
     listings: async () => {
       return Listings.find();

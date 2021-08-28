@@ -36,7 +36,7 @@ const typeDefs = gql`
   type Query {
     listings: [Listings]
     listing(id: ID): [Listings]
-    profile: Profile
+    profile(id: ID): Profile
     profiles: [Profile]!
     seedData(secret: String!): Boolean
   }
