@@ -38,6 +38,9 @@ function App() {
             </Route>
             <Route exact path="/SearchPage/:id"> 
             </Route>
+            <Route exact path="/properties.js">
+              
+            </Route>
           </Switch>
         </div>
       </Router>
